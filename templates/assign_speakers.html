@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assign Voices</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 min-h-screen flex flex-col items-center justify-center text-gray-800 p-6">
+  <div class="bg-white p-8 rounded-2xl shadow-lg max-w-3xl w-full">
+    <h2 class="text-3xl font-semibold text-center text-indigo-700 mb-6">Assign Voices to Each Speaker</h2>
+
+    <form method="post" action="{{ url_for('select', id=id) }}?type=type">
+      {% for speaker in speakers %}
+        <div class="mb-6">
+          <h4 class="text-xl font-semibold text-gray-800">{{ speaker }}</h4>
+          
+          <div class="my-4">
+            <audio controls class="w-full rounded-lg shadow-md">
+              <source src="{{ url_for('serve_clip', filename=speaker_clips[speaker]) }}" type="audio/wav">
+              Your browser does not support the audio tag.
+            </audio>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            <label for="{{ speaker }}" class="font-semibold text-lg">Choose TTS Voice:</label>
+            <select name="{{ speaker }}" class="border-2 border-indigo-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+              <option value="ta-IN-Standard-A">Standard A (FEMALE)</option>
+              <option value="ta-IN-Standard-B">Standard B (MALE)</option>
+              <option value="ta-IN-Standard-C">Standard C (FEMALE)</option>
+              <option value="ta-IN-Standard-D">Standard D (MALE)</option>
+              <option value="ta-IN-Wavenet-A">Wavenet A (FEMALE)</option>
+              <option value="ta-IN-Wavenet-B">Wavenet B (MALE)</option>
+              <option value="ta-IN-Wavenet-C">Wavenet C (FEMALE)</option>
+              <option value="ta-IN-Wavenet-D">Wavenet D (MALE)</option>
+            </select>
+          </div>
+        </div>
+      {% endfor %}
+      
+      <div class="text-center mt-8">
+        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300 ease-in-out">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
