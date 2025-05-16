@@ -1,24 +1,20 @@
 # DubbingWebsite
 
-🚀 How to Run
-Create a virtual environment (optional but recommended):
+## 🚀 How to Run
 
-bash
-Copy
-Edit
-python -m venv venv
-source venv/bin/activate   # On Windows: venv\Scripts\activate
-Install the dependencies:
+1. **Create a virtual environment (optional but recommended):**
+   ```python -m venv venv
+   source venv/bin/activate   # On Windows: venv\Scripts\activate ```
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Run the Flask app:
+3. **Install the dependencies:**
+  ```pip install -r requirements.txt```
 
-bash
-Copy
-Edit
-python main.py
+4. **Run the Flask app: **
+
+  ```python main.py```
+
+
+
+
 
 
