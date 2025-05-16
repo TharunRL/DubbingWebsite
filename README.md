@@ -2,15 +2,10 @@
 
 ## 🚀 How to Run
 
-1. **Create a virtual environment (optional but recommended):**
-   ```python -m venv venv
-   source venv/bin/activate   # On Windows: venv\Scripts\activate ```
-
-3. **Install the dependencies:**
+1. **Install the dependencies:**
   ```pip install -r requirements.txt```
 
-4. **Run the Flask app: **
-
+2. **Run the Flask app: **
   ```python main.py```
 
 
