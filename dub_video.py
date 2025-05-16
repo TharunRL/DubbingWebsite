@@ -155,7 +155,7 @@ def translation(x,id):
     def translate_and_refine(transcript):
         json_data = json.dumps(transcript, indent=4)
         tasks[id]['translation_status']=20
-        rapidapi_key = "7f3b55e0bemshb11fc9a6e4bc0a7p14b384jsn531699aebdd8"  # <-- Replace with your RapidAPI key
+        rapidapi_key = "API_KEY" 
         
         def translate_with_rapidapi(text):
             url = "https://google-translate113.p.rapidapi.com/api/v1/translator/json"
@@ -175,7 +175,7 @@ def translation(x,id):
         
         formal_tamil = translate_with_rapidapi(json_data)
         tasks[id]['translation_status']=30
-        client = genai.Client(api_key="AIzaSyBu_ggFYGfWooB7DFkyb6AF-CVKaahZALs")
+        client = genai.Client(api_key="API_KEY")
 
         def refine_with_slang(translated_text):
             response = client.models.generate_content(
